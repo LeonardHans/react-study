@@ -12,11 +12,10 @@
 .button-container {
   display: flex;
   flex-direction: row; /* 수평 정렬 */
-  gap: 20px; /* 요소 간의 간격 */
+  gap: 20px; /* 좌우 */
   justify-content: center;
   align-items: center;     /* 수직 가운데 정렬 */
-  margin: 10px;        /* 버튼 간의 동일한 간격 */
-  
+  margin: 10px;        /* 상하 */
 }
 
 .item-img{

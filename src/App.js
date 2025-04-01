@@ -35,7 +35,6 @@ function App() {
     setMy(choice[choiceIndice[myIndex]]);
 
     let computerIndex = Math.floor(Math.random() * choiceIndice.length);
-    computerIndex = computerIndex == 3 ? 0 : computerIndex;
     setComputer(choice[choiceIndice[computerIndex]])
 
     setMyStatus(winTable[myIndex][computerIndex])
