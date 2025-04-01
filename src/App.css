@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;     /* 수직 가운데 정렬 */
   margin: 10px;        /* 버튼 간의 동일한 간격 */
+  
 }
 
 .item-img{
