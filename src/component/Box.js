@@ -4,7 +4,7 @@ const Box = (props) => {
     const fahrenheit = Math.round(props.data?.main.temp*9/5 + 32)
     return (
         <div className="box">
-            <div style={{ fontSize: '30px' }}>{props.data?.weather[0].description}</div>
+            <div style={{ fontSize: '40px' }}>{props.data?.weather[0].description}</div>
             <p></p>
             <div style={{ fontWeight: 'bold', color: 'orange', fontSize: '20px' }}>{props.data?.name}</div>
             <p></p>

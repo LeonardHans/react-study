@@ -4,6 +4,9 @@
   border: 5px solid skyblue;
   border-radius: 30px;
 
+  text-align: center;
+  width: 100%;
+
   display: flex;
   flex-direction: column; /* 요소를 수직으로 나열 */
   justify-content: center; /* 모든 요소를 수직 가운데 정렬 */
