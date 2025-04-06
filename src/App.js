@@ -1,11 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { ClipLoader } from 'react-spinners';
 import './App.css';
 import Box from './component/Box';
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { ClipLoader } from 'react-spinners';
 
-const apiKey = '8bb47e4ae02f68dc8ea8910a478e49a4'
+const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
 function App() {
 
@@ -55,9 +55,9 @@ function App() {
       {!loading && (<div>
         <Box data={data}></Box>
         <div className='horizontal-layout'>
-          <Button key={-1} variant={cityName == 'current' ? "primary" : "outline-primary"} onClick={() => updateCurrent()}>Current Location</Button>
+          <Button key={-1} variant={cityName === 'current' ? "primary" : "outline-primary"} onClick={() => updateCurrent()}>Current Location</Button>
           {cities.map((city, index) => (
-            <Button key={index} variant={cityName == city ? "info" : "outline-info"} onClick={() => updateOther(city)}>{city}</Button>
+            <Button key={index} variant={cityName === city ? "info" : "outline-info"} onClick={() => updateOther(city)}>{city}</Button>
           ))}
         </div>
       </div>)}
