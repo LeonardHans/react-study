@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Product 1",
+            "image": "https://pimg.mk.co.kr/meet/neds/2017/09/image_readtop_2017_601694_15047650883020839.jpg",
+            "price": 10.0
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "image": "https://pimg.mk.co.kr/meet/neds/2014/11/image_readtop_2014_1398818_14153276181616439.jpg",
+            "price": 20.0
+        },
+        {
+            "id": 3,
+            "name": "Product 2",
+            "image": "https://img.insight.co.kr/static/2019/12/16/700/520uh86a08z70xw3580k.jpg",
+            "price": 30.0
+        }
+    ]
+}
