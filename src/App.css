@@ -39,3 +39,32 @@
     padding: 10px;
     gap: 10px;
 }
+
+.my-masonry-grid {
+    display: flex;
+    margin-left: -30px;
+    /* gutter size offset */
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.my-masonry-grid_column {
+    padding-left: 30px;
+    /* gutter size */
+    background-clip: padding-box;
+}
+
+.masonry-item {
+    margin-bottom: 30px;
+    /* spacing between items */
+    display: inline-block;
+    /* 주로 아이템을 블록으로 취급 */
+    transition: transform 0.4s ease;
+    /* 변형에 대한 애니메이션 지정 */
+}
+
+.masonry-item:hover {
+    transform: scale(1.1);
+    /* 아이템 확대 */
+}

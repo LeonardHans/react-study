@@ -6,15 +6,12 @@ import NavigationBar from './component/NavigationBar';
 import About from './page/About';
 import Home from './page/Home';
 import Login from './page/Login';
+import ProductDetail from './page/ProductDetail';
 
 function App() {
-  const [authN, setAuthN] = useState(true);
+  const [authentiation, setAuthentication] = useState(false);
   const LoginRoute = ({ page : Page }) => {
-    return authN ? <Page /> : <Navigate to='/login' />;
-  }
-  
-  const UserPage = () => {
-    return (<div>UserPage</div>);
+    return authentiation ? <Page /> : <Navigate to='/login' />;
   }
   
   return (<div>
@@ -22,9 +19,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/login" element={<Login />} />
-
-      <Route path="/user" element={<LoginRoute page={UserPage}/>} />
+      <Route path="/login" element={<Login setAuthentication={setAuthentication}/>} />
+      <Route path="/product/:id" element={<LoginRoute page={ProductDetail}/>} />
     </Routes>
   </div>);
 }

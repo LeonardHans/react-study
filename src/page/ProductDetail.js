@@ -1,10 +1,22 @@
-import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
-    const [query, setQuery] = useSearchParams()
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        getProducts();
+    }, []);
+
+    const getProducts = async () => {
+        let url = `http://localhost:5555/products/` + id;
+        let response = await fetch(url);
+        let data = await response.json();
+        setProduct(data);
+    }
     return (
-        <div>{ query.get('test') }</div>
+        <div>{ product?.name }</div>
     )
 }
 

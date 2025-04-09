@@ -9,7 +9,9 @@ const NavigationBar = () => {
     const items = [
         { name: 'Home', path: '/' },
         { name: 'Portrait', path: '/about' },
+        { name: 'Landscape', path: '/about' },
         { name: 'Abstract', path: '/about' },
+        { name: 'Realism', path: '/about' },
         { name: 'About', path: '/about' },
     ];
     
