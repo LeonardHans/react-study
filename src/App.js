@@ -15,7 +15,7 @@ function App() {
   }
   
   return (<div>
-    <NavigationBar />
+    <NavigationBar authentiation={authentiation} setAuthentication={setAuthentication}/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />

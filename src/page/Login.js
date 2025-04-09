@@ -7,7 +7,6 @@ const Login = ({ setAuthentication}) => {
   const navigate = useNavigate();
   const loginUser = (event) => {
     event.preventDefault();
-    console.log('Login');
     setAuthentication(true);
     navigate('/');
   }
@@ -16,11 +15,11 @@ const Login = ({ setAuthentication}) => {
       <Form style={{ padding: '20px' }} onSubmit={loginUser}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="name" placeholder="test" />
+          <Form.Control type="name" placeholder="Not Applicable" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="12345" />
+          <Form.Control type="password" placeholder="Not Applicable" />
         </Form.Group>
         <Button variant="danger" type="submit">
           Submit

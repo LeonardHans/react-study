@@ -4,7 +4,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
-const NavigationBar = () => {
+const NavigationBar = ({ authentiation, setAuthentication }) => {
     const navigate = useNavigate();
     const items = [
         { name: 'Home', path: '/' },
@@ -19,7 +19,12 @@ const NavigationBar = () => {
         <div className="navigation-bar">
             <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <FontAwesomeIcon icon={faUser} style={{ marginRight: '10px',  }} />
-                <Button variant="dark" onClick={() => navigate('/login')} >Login</Button>
+                {
+                    authentiation === false ?
+                        <Button variant="dark" onClick={() => navigate('/login')} >Login</Button>
+                        :
+                        <Button variant="dark" onClick={() => { setAuthentication(false); navigate('/'); } } >Logout</Button>
+                }
             </div>
             <div style={{ width: '100%', display: 'flex', justifyContent: 'center',  alignItems: 'center' }}>
                 <img width={200} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJzqecc-ZohBVG710s4XeLOa51S-VsYbMrog&s" />
