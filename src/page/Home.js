@@ -3,8 +3,6 @@ import Masonry from 'react-masonry-css';
 import { useNavigate } from 'react-router-dom';
 import ProductCard from '../component/ProductCard';
 
-
-
 const Home = () => {
   const navigate = useNavigate();
 
@@ -15,7 +13,7 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
     //let url = `http://localhost:5555/products`;
-    let url = `https://my-json-server.typicode.com/products`;
+    let url = `https://my-json-server.typicode.com/LeonardHans/react-study/products`;
     let response = await fetch(url);
     let data = await response.json();
     setProducts(data);
