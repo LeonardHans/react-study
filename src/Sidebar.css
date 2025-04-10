@@ -27,7 +27,6 @@
 }
 
 .toggle-box {
-    height: 100%;
     display: flex;
     justify-content: flex-start;
 }
@@ -45,12 +44,12 @@
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: -24px;
+        top: 0;
         left: 0;
         width: 90px;
-        height: 20%;
+        height: 100%;
         background-color: #111;
-        z-index: 99;
+        z-index: 100;
     }
 
     .menu-toggle {

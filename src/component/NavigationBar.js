@@ -26,7 +26,7 @@ const NavigationBar = ({ authentiation, setAuthentication, refreshProduct }) => 
         }
     }
     
-    return (<div classNem="n">
+    return (<div>
         <div className="navigation-bar">
             <div className={`toggle-box ${isSidebarOpen ? 'active' : ''}`}>
                 <button className="menu-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>☰</button>
