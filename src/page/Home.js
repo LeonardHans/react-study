@@ -22,8 +22,8 @@ const Home = () => {
   const getProducts = async () => {
     const queryString = query.get('q') ?? "";
 
-    const url = `http://localhost:5555/products?q=${queryString}`;
-    //const url = `https://my-json-server.typicode.com/LeonardHans/react-study/products?q=${queryString}`;
+    //const url = `http://localhost:5555/products?q=${queryString}`;
+    const url = `https://my-json-server.typicode.com/LeonardHans/react-study/products?q=${queryString}`;
 
     await fetchWithLoading(url);
   }
