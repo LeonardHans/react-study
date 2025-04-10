@@ -7,7 +7,8 @@
             "description": "The starry night is a unique blend of classic art and modern technology, showcasing the beauty of the night sky.",
             "image": "https://pimg.mk.co.kr/meet/neds/2017/09/image_readtop_2017_601694_15047650883020839.jpg",
             "tag": [
-                "landscape"
+                "landscape",
+                "sale"
             ],
             "price": 10.0,
             "salePercentage": 0.9
@@ -18,8 +19,9 @@
             "writer": "Edvard Munch",
             "image": "https://pimg.mk.co.kr/meet/neds/2014/11/image_readtop_2014_1398818_14153276181616439.jpg",
             "tag": [
-                "Portrait",
-                "Abstract"
+                "portrait",
+                "abstract",
+                "sale"
             ],
             "price": 20.0,
             "salePercentage": 0.8
@@ -30,8 +32,8 @@
             "writer": "Vincent van Gogh",
             "image": "https://img.insight.co.kr/static/2019/12/16/700/520uh86a08z70xw3580k.jpg",
             "tag": [
-                "Portrait",
-                "Abstract"
+                "portrait",
+                "abstract"
             ],
             "price": 50.0
         },
@@ -41,8 +43,8 @@
             "writer": "Leonardo da Vinci",
             "image": "https://cdn.pixabay.com/photo/2012/11/28/08/56/mona-lisa-67506_640.jpg",
             "tag": [
-                "Portrait",
-                "Realism"
+                "portrait",
+                "realism"
             ],
             "price": 39.0
         },
@@ -52,8 +54,9 @@
             "writer": "Johannes Vermeer",
             "image": "https://img.khan.co.kr/news/r/1100xX/2019/01/23/2019012301002725000210521.jpg",
             "tag": [
-                "Portrait",
-                "Realism"
+                "portrait",
+                "realism",
+                "sale"
             ],
             "price": 30.0,
             "salePercentage": 0.8
@@ -64,7 +67,8 @@
             "writer": "Gustav Klimt",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0C23TvleKHe1jKRDQ8mGs5njnzO3CfrkQDA&s",
             "tag": [
-                "Abstract"
+                "abstract",
+                "sale"
             ],
             "price": 45.0,
             "salePercentage": 0.8
@@ -75,8 +79,9 @@
             "writer": "Claude Monet",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/330px-Monet_-_Impression%2C_Sunrise.jpg",
             "tag": [
-                "Landscape",
-                "Abstract"
+                "landscape",
+                "abstract",
+                "sale"
             ],
             "price": 50.0,
             "salePercentage": 0.7
@@ -87,7 +92,8 @@
             "writer": "Caspar David Friedrich",
             "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg",
             "tag": [
-                "Landscape"
+                "Landscape",
+                "sale"
             ],
             "price": 40.0,
             "salePercentage": 0.7
@@ -98,8 +104,9 @@
             "writer": "Caspar David Friedrich",
             "image": "https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/dk0r/image/mv12QmH1ckNq8y3xBs-97mjndyo.jpg",
             "tag": [
-                "Portrait",
-                "Abstract"
+                "portrait",
+                "abstract",
+                "sale"
             ],
             "price": 40.0,
             "salePercentage": 0.7

@@ -1,12 +1,11 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const About = () => {
-  const navigate = useNavigate()
   return (
-    <div>
-      <p>Created by LeonardHan</p>
-      <button onClick={() => navigate('/')}>Home</button>
+    <div style={{ height: 'auto', width: 'auto', backgroundColor: '#111111' }}>
+      <div className="empty-state" style={{ color: '#fff', padding: '20px', textAlign: 'center' }}>
+        Created by LeonardHans.
+      </div>
     </div>
   )
 }

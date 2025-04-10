@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
                             <p style={{ textDecoration: 'line-through', margin: '0', color: 'gray' }}>${product?.price}</p>
-                            <p style={{ margin: '0', color: 'white' }}>➡ ${product?.price * product.salePercentage}</p>
+                            <p style={{ margin: '0', color: 'white' }}>&nbsp;➡ ${product?.price * product.salePercentage}</p>
                         </div>
                         <p style={{ margin: '0', color: 'yellow', fontWeight: '700' }}>SALE</p>
                     </div>
