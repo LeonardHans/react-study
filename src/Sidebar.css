@@ -27,13 +27,13 @@
 }
 
 .toggle-box {
+    height: 100%;
     display: flex;
     justify-content: flex-start;
 }
 
 @media (max-width: 700px) {
     .toggle-box.active {
-        display: flex;
         justify-content: center;
     }
 

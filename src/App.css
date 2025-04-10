@@ -34,19 +34,20 @@
 
 .my-masonry-grid {
     display: flex;
-    /* gutter size offset */
-    width: auto;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .my-masonry-grid_column {
     padding-left: 10px;
     /* gutter size */
     background-clip: padding-box;
-    margin: 0 auto;
 }
 
 .masonry-item {
     margin-bottom: 30px;
+    width: auto;
     display: inline-block;
     transition: transform 0.5s ease;
     /* 변형에 대한 애니메이션 지정 */
