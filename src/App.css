@@ -47,7 +47,7 @@
 }
 
 .my-masonry-grid_column {
-    padding-left: 30px;
+    padding-left: 10px;
     /* gutter size */
     background-clip: padding-box;
     margin: 0 auto;
@@ -55,9 +55,7 @@
 
 .masonry-item {
     margin-bottom: 30px;
-    /* spacing between items */
     display: inline-block;
-    /* 주로 아이템을 블록으로 취급 */
     transition: transform 0.5s ease;
     /* 변형에 대한 애니메이션 지정 */
 }

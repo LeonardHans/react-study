@@ -49,7 +49,7 @@ const Home = () => {
     500: 1
   };
 
-  return (<div style={{ height: 'auto', width: 'auto', backgroundColor: '#111111' }}>
+  return (<div style={{ height: 'auto', width: 'auto', backgroundColor: '#111111', display: 'flex', flexDirection: 'column', alignItems: 'center'  }}>
       <ClipLoader color='gray' loading={loading} size={200} />
       { !loading && (<div>
         {products.length > 0 ?
