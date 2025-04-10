@@ -11,14 +11,14 @@ const Login = ({ setAuthentication}) => {
     navigate('/');
   }
   return (
-    <div style={{ backgroundColor: 'gray', width: '100vw', height: '100vh'}}>
-      <Form style={{ padding: '20px' }} onSubmit={loginUser}>
+    <div style={{ backgroundColor: 'gray', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center'}}>
+      <Form style={{ padding: '20px', width: '300px', border: '1 solid black' }} onSubmit={loginUser}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
+          <Form.Label style={{ fontWeight: '800' }}>Username</Form.Label>
           <Form.Control type="name" placeholder="Not Applicable" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label style={{ fontWeight: '800' }}>Password</Form.Label>
           <Form.Control type="password" placeholder="Not Applicable" />
         </Form.Group>
         <Button variant="danger" type="submit">
