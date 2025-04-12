@@ -14,7 +14,7 @@ const CounterBox = () => {
     
     return (<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <h1>Count : {count}</h1>
-        <p>You can only set from 1 to 100 value in the box</p>
+        <p>You can only set from 1 to 100 integer value in the box</p>
         <InputButton name="increase" func={increaseCount}/>
         <InputButton name="descrese" func={decreaseCount}/>
         <InputButton name="multiply" func={multiplyCount}/>

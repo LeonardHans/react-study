@@ -13,7 +13,7 @@ const InputButton = ({ name, func }) => {
         }}>{name}</button>
 
         <input type="number" min="1" max="100" defaultValue={1} onChange={(e) => {
-            let val = Number(e.target.value);
+            let val = Number(Math.round(e.target.value));
             if (100 <= val) {
                 val = 100;
             }
