@@ -7,14 +7,14 @@ const CounterBox = () => {
 
     useEffect(() => {
         if (count === target) {
-            alert('Congrats! you made it in ' + score + ' attempt(s)!');
+            alert('Congrats! You made it in ' + score + ' attempt(s)!');
             reset();
         }
     }, [count]);
     
     return (<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <h1>Count : {count}</h1>
-        <p>You can only set from 1 to 100 integer value in the box</p>
+        <p>You can only set from 1 to 100 integer value in the input box</p>
         <InputButton name="increase" func={increaseCount}/>
         <InputButton name="descrese" func={decreaseCount}/>
         <InputButton name="multiply" func={multiplyCount}/>
