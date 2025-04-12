@@ -47,7 +47,7 @@ const counterStore = create( (set) => ({
     },
     divideCount: (val) => {
         if (val === 0) {
-            alert('Unknown Critcal Issue!!')
+            alert('Unknown Critical Issue Happened!!!')
         }
         else {
             set( (state) => {

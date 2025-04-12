@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import counterStore from '../store/counterStore';
 
-const InputButton = ({ func, name }) => {
-    const { count, target, increaseScore, reset } = counterStore();
+const InputButton = ({ name, func }) => {
+    const { increaseScore } = counterStore();
     const [inputValue, setInputValue] = useState(1);
+
     return (<div>
 
         <button onClick={() => {
