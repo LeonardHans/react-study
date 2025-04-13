@@ -7,7 +7,6 @@ const contactStore = create( (set) => ({
             return { contactBook: [...state.contactBook, {name, number, id: Date.now()}] };
         })
     },
-    resetContactBook: () => set({ contactBook: [] })
 }))
 
 export default contactStore;
