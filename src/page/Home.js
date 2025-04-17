@@ -39,9 +39,9 @@ const Home = () => {
     await fetchWithLoading(url);
   }
 
-  useEffect( async () => {
+  useEffect(() => {
     func();
-  }, [query]);
+  }, []);
 
   return (<div>
       <div style={{ backgroundColor: '#bbbbbb', display:'flex', width: '100%', height: '140px', alignItems: 'center'}}>
@@ -59,7 +59,7 @@ const Home = () => {
           {books?.docs?.length > 0 ?
             (<Container>
                 <Row>
-                  {books?.docs.map((book, index) => (
+                  {books.docs.map((book, index) => (
                     <Col lg={3}>
                       <BookCard key={index} book={book}/>
                     </Col>
