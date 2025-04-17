@@ -29,7 +29,9 @@ const Home = () => {
   }
   
   const func = async () => {
-    const queryString = query.get('q') ?? "q=love";
+    let queryString = query.get('q');
+    if (queryString == null || queryString === '')
+      queryString = 'love';
     const url = `https://openlibrary.org/search.json?q=${queryString}&limit=10`;
     await fetchWithLoading(url);
   }
