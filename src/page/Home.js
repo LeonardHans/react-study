@@ -28,20 +28,15 @@ const Home = () => {
     }
   }
   
-  const handleClick = () => {
-    //navigate(`/bookDetails/${book?.id}`, { state: { book } });
-  }
-
   const func = async () => {
-    const queryString = query.get('q') ?? "";
-
-    const url = `https://openlibrary.org/search.json?title=love&limit=10`;
+    const queryString = query.get('q') ?? "q=love";
+    const url = `https://openlibrary.org/search.json?q=${queryString}&limit=10`;
     await fetchWithLoading(url);
   }
 
   useEffect(() => {
     func();
-  }, []);
+  }, [query]);
 
   return (<div>
       <div style={{ backgroundColor: '#bbbbbb', display:'flex', width: '100%', height: '140px', alignItems: 'center'}}>
