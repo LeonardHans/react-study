@@ -50,15 +50,15 @@ const Home = () => {
               <input type="text" placeholder="Search" style={{background: '#bbbbbb' }} onKeyDown={(event) => onEntered(event)} />
           </div>
       </div>
-      <div style={{ height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center'  }}>
+      <div style={{ height: 'auto', width: 'auto', display: 'flex', alignItems: 'center', justifyContent:'center'}}>
         <ClipLoader color='gray' loading={loading} size={200} />
         { !loading && (<div>
           {books?.docs?.length > 0 ?
             (<Container>
-                <Row>
+                <Row style={{ display: 'flex', justifyContent: 'center', border: '1px solid black'}}>
                   {books.docs.map((book, index) => (
-                    <Col lg={3}>
-                      <BookCard key={index} book={book}/>
+                    <Col lg={4} key={index} style={{border: '1px solid black', width: '300px'}}>
+                      <BookCard book={book}/>
                     </Col>
                   ))}
               </Row>
