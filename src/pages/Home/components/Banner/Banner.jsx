@@ -1,30 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
 import './Banner.style.css';
 
 const Banner = () => {
-    const { data, isLoading, isFetching, isPending, isError, error } = usePopularMoviesQuery();
+    const { data, status, isLoading, isError, error } = usePopularMoviesQuery();
 
     const [index, setIndex] = useState(0);
     const [fade, setFade] = useState(false);
     const slideMiliseconds = 5000;
     const fadeOutMiliseconds = 1000;
 
-    console.log(data, index);
-
     useEffect(() => {
         setFade(true);
 
         const interval = setInterval(() => {
-            console.log('isLoading', index, isLoading, isFetching, isPending, data);
             if (isLoading === true) {
-                setFade(false);
                 return;
             }
 
             setTimeout(() => {
-                console.log('fade', fade, index);
                 setIndex((prevIndex) => (prevIndex + 1) % data?.data.results.length);
                 setFade(false);
             }, fadeOutMiliseconds);
@@ -33,10 +29,10 @@ const Banner = () => {
         return () => {
             clearInterval(interval);
         };
-    }, [index]);
+    }, [index, data]);
 
     if (isLoading) {
-        return <h1 style={{ color: 'white' }}>Loading...</h1>;
+        return <ClipLoader color='gray' loading={isLoading} size={200} />;
     }
     if (isError) {
         return <Alert variant='danger'>Error: {error.message}</Alert>;
