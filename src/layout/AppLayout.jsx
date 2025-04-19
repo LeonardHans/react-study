@@ -10,15 +10,15 @@ const AppLayout = () => {
     return (
         <div>
             <Navbar bg="black" expand="lg" style={{ height: '7vh' }}>
-                <Container fluid>
+                <Container fluid style={{ position: 'fixed' }}>
                     <Navbar.Brand href="/">
                         <img src={`${process.env.PUBLIC_URL}/leoflix.png`} alt="Logo" style={{ maxHeight: '7vh', objectFit: 'contain' }} />
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
+
+                    <Navbar.Collapse id="navbarScroll" >
                         <Nav
                             className="me-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
+                            style={{ maxHeight: '100%', }}
                             navbarScroll
                         >
                             <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>

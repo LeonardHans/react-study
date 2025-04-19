@@ -45,7 +45,7 @@ const Banner = () => {
             style={{ backgroundImage: `url(${urlPrefix}${data?.data.results[index]?.poster_path})` }}>
             <div className={`banner-text-area ${fade ? 'fade-out' : ''}`}>
                 <h1 style={{ color: 'white' }}>{data?.data.results[index]?.title}</h1>
-                <p style={{ color: 'white' }}>{data?.data.results[index]?.overview}</p>
+                <p style={{ color: 'white', overflow: 'hidden' }}>{data?.data.results[index]?.overview}</p>
             </div>
         </div >
     )
