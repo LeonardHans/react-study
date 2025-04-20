@@ -63,7 +63,7 @@ const MovieSlide = ({ useApi, title }) => {
             >
                 {console.log('MovieSlide data', data)}
                 {data?.data.results.map((movie, index) => {
-                    return <MovieCard key={index} movie={movie}></MovieCard>
+                    return <MovieCard key={index} movie={movie} isTvShow={title==='Popular TV Shows'}></MovieCard>
                 })}
             </Carousel>
         </div>
