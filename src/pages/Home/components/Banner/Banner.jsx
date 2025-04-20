@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
+import { useLeospickQuery } from '../../../../hooks/useLeospick';
 import './Banner.style.css';
 
 const Banner = () => {
-    const { data, status, isLoading, isError, error } = usePopularMoviesQuery();
+    const { data, status, isLoading, isError, error } = useLeospickQuery();
 
     const [index, setIndex] = useState(0);
     const [fade, setFade] = useState(false);
@@ -43,9 +43,9 @@ const Banner = () => {
     return (
         <div className='banner'
             style={{ backgroundImage: `url(${urlPrefix}${data?.data.results[index]?.poster_path})` }}>
-            <div className={`banner-text-area ${fade ? 'fade-out' : ''}`}>
-                <h1 style={{ color: 'white' }}>{data?.data.results[index]?.title}</h1>
-                <p style={{ color: 'white', overflow: 'hidden' }}>{data?.data.results[index]?.overview}</p>
+            <div className={`banner-text-area ${fade ? 'fade-out' : ''}`} style={{ color: 'white' }}>
+                <h1>{data?.data.results[index]?.title}</h1>
+                <p>{data?.data.results[index]?.overview}</p>
             </div>
         </div >
     )

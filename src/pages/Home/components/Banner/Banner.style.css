@@ -6,7 +6,9 @@
     background-position: center;
     transition: all 1s ease-in-out;
     align-items: center;
-    height: 50vh;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner:before {
@@ -14,7 +16,7 @@
     background: linear-gradient(to top, black, transparent);
     position: absolute;
     left: 0;
-    height: 50vh;
+    height: 100%;
     width: 100%;
 }
 

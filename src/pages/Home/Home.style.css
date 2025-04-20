@@ -1,4 +1,5 @@
 .main {
     background-color: black;
-    height: 93vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
