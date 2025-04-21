@@ -1,11 +1,15 @@
+import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Badge } from 'react-bootstrap';
 import { ClipLoader } from 'react-spinners';
+import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 import './MovieCard.style.css';
-import { faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MovieCard = ({ movie, isTvShow }) => {
+    const { data: genreTable } = useMovieGenreQuery(isTvShow);
+    console.log('genreTable,', genreTable);
+
     if (isTvShow) {
         console.log('MovieCard,', movie);
     }
@@ -23,7 +27,7 @@ const MovieCard = ({ movie, isTvShow }) => {
                     movie.genre_ids.map((id, index) => {
                         return (
                             <Badge bg="danger" key={index} style={{ color: 'white', textAlign: 'center', margin: '3px' }}>
-                                {id}
+                                {genreTable?.[id]?.name ?? id}
                             </Badge>
                         )
                     })
@@ -31,7 +35,7 @@ const MovieCard = ({ movie, isTvShow }) => {
                 <div>
                     <FontAwesomeIcon icon={faStar} style={{ color: 'yellow', marginRight: '5px', marginLeft: '5px' }} />
                     {(movie.vote_average).toFixed(1)}
-                    <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'green',  marginRight: '5px', marginLeft: '10px' }} />
+                    <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'green', marginRight: '5px', marginLeft: '10px' }} />
                     {(movie.popularity).toFixed(0)}
                 </div>
                 <div>{movie.adult}</div>

@@ -1,10 +1,10 @@
 import React from 'react'
+import MovieSlide from '../../common/MovieSlide/MovieSlide'
 import { useLeospickQuery } from '../../hooks/useLeospick'
 import { usePopularMoviesQuery } from '../../hooks/usePopularMovies'
 import { usePopularTvShowsQuery } from '../../hooks/usePopularTvShows'
 import './Home.style.css'
 import Banner from './components/Banner/Banner'
-import MovieSlide from './components/MovieSlide/MovieSlide'
 
 const Home = () => {
     return (
