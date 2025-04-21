@@ -5,7 +5,7 @@ import { useLeospickQuery } from '../../../../hooks/useLeospick';
 import './Banner.style.css';
 
 const Banner = () => {
-    const { data, status, isLoading, isError, error } = useLeospickQuery();
+    const { data, isLoading, isError, error } = useLeospickQuery();
 
     const [index, setIndex] = useState(0);
     const [fade, setFade] = useState(false);

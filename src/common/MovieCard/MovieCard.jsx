@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Badge } from 'react-bootstrap';
 import { ClipLoader } from 'react-spinners';
-import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
+import { globalStore } from '../../store/globalStore';
 import './MovieCard.style.css';
 
 const MovieCard = ({ movie, isTvShow }) => {
-    const { data: genreTable } = useMovieGenreQuery(isTvShow);
+    //const { data: genreTable } = useMovieGenreQuery(isTvShow);
+    const { getGenres } = globalStore();
 
-    if (!movie || !genreTable) {
+    if (!movie) {
         return <ClipLoader color='gray' loading={!movie} size={200} />;
     }
 
@@ -23,7 +24,7 @@ const MovieCard = ({ movie, isTvShow }) => {
                     movie.genre_ids.map((id, index) => {
                         return (
                             <Badge bg="danger" key={index} style={{ color: 'white', textAlign: 'center', margin: '3px' }}>
-                                {genreTable?.[id] ?? console.log(id)}
+                                {getGenres(id, isTvShow) ?? console.log(id)}
                             </Badge>
                         )
                     })
