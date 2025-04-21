@@ -10,11 +10,8 @@ export const useMovieGenreQuery = (isTvShow) => {
         queryKey: ['movie-query', isTvShow === true ? 'tv' : 'movie'],
         queryFn: fetchMovieGenre,
         select: (data) => {
-            console.log('useMovieGenreQuery, data', data);
             let genreTable = {};
-
             data?.data.genres.map((item) => {
-                console.log('item', item);
                 genreTable[item.id] = item.name;
             });
             return genreTable;

@@ -8,7 +8,6 @@ import './MovieSlide.style.css';
 
 const MovieSlide = ({ useApi, title }) => {
     const { data, isLoading, isError, error } = useApi();
-    console.log(data, isLoading);
 
     const responsive = {
         desktop: {
@@ -61,7 +60,6 @@ const MovieSlide = ({ useApi, title }) => {
             dotListClass="custom-dot-list-style"
             */
             >
-                {console.log('MovieSlide data', data)}
                 {data?.data.results.map((movie, index) => {
                     return <MovieCard key={index} movie={movie} isTvShow={title === 'Popular TV Shows'}></MovieCard>
                 })}

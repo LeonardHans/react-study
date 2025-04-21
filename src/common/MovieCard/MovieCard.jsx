@@ -8,15 +8,11 @@ import './MovieCard.style.css';
 
 const MovieCard = ({ movie, isTvShow }) => {
     const { data: genreTable } = useMovieGenreQuery(isTvShow);
-    console.log('genreTable,', genreTable);
 
-    if (isTvShow) {
-        console.log('MovieCard,', movie);
-    }
-
-    if (!movie) {
+    if (!movie || !genreTable) {
         return <ClipLoader color='gray' loading={!movie} size={200} />;
     }
+
     const urlPrefix = 'https://media.themoviedb.org/t/p/w600_and_h900_bestv2';
 
     return (
@@ -27,7 +23,7 @@ const MovieCard = ({ movie, isTvShow }) => {
                     movie.genre_ids.map((id, index) => {
                         return (
                             <Badge bg="danger" key={index} style={{ color: 'white', textAlign: 'center', margin: '3px' }}>
-                                {genreTable?.[id]?.name ?? id}
+                                {genreTable?.[id] ?? console.log(id)}
                             </Badge>
                         )
                     })

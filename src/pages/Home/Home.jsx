@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className='main'>
             <Banner />
-            <MovieSlide useApi={useLeospickQuery} title="Leo's pick" />
+            <MovieSlide useApi={useLeospickQuery} title="Leo's Pick" />
             <MovieSlide useApi={usePopularMoviesQuery} title='Popular Movies' />
             <MovieSlide useApi={usePopularTvShowsQuery} title='Popular TV Shows' />
         </div>
