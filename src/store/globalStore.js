@@ -29,7 +29,8 @@ export const globalStore = create( (set) => ({
             0: {
                 breakpoint: { max: startWidth, min: 0 },
                 items: 1,
-                slidesToSlide: 1 // optional, default to 1.
+                slidesToSlide: 1, // optional, default to 1.
+                partialVisibilityGutter: 20
             }
         };
 

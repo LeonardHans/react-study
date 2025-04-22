@@ -20,9 +20,9 @@ const AppLayout = () => {
 
     return (
         <div>
-            <Navbar bg="black" expand="lg" style={{ height: isSmallScreen ? '14vh' : '7vh', zIndex: 100, backgroundColor: 'black' }}>
+            <Navbar bg="black" expand="lg" style={{ height: isSmallScreen ? '14vh' : '7vh' }}>
+                <Container fluid style={{ position: 'fixed', display: 'flex', justifyContent: 'space-between', height: isSmallScreen ? '14vh' : '7vh', width: '100%', backgroundColor: 'black', zIndex: 10, overflow: 'hidden' }}>
 
-                <Container fluid style={{ position: 'fixed', display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <Navbar.Brand href="/">
                             <img src={`${process.env.PUBLIC_URL}/leoflix.png`} alt="Logo" style={{ maxHeight: '7vh', objectFit: 'contain' }} />
