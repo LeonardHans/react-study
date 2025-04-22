@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Alert from 'react-bootstrap/Alert';
 import ReactPaginate from 'react-paginate';
 import { useSearchParams } from 'react-router-dom';
+import ClipLoader from 'react-spinners/ClipLoader';
 import MovieCard from '../../common/MovieCard/MovieCard';
 import { useSearchQuery } from '../../hooks/useSearch';
 import './Movies.style.css';
@@ -14,8 +16,23 @@ const Movies = () => {
     const { data, isLoading, isError, error } = useSearchQuery({ keyword, page });
     console.log('data', data);
 
+    useEffect(() => {
+        setPage(1);
+    }, [keyword]);
+
     const handlePageChange = (event) => {
         setPage(event.selected + 1);
+    }
+
+    if (isLoading) {
+        return <ClipLoader color='gray' loading={isLoading} size={200} style={{ backgroundColor: 'black' }} />;
+    }
+    if (isError) {
+        return <Alert variant='danger'>Error: {error.message}</Alert>;
+    }
+
+    if (data?.data.results.length === 0) {
+        return <div style={{ color: 'white', textAlign: 'center', padding: '10px', backgroundColor: 'black', height: '93vh' }}>No results found for "{keyword}"</div>;
     }
 
     return (
