@@ -37,9 +37,9 @@ const Movies = () => {
 
     return (
         <div className='movies-main'>
-            <ReactPaginate zindex={-1}
-                previousLabel="Previous"
-                nextLabel="Next >"
+            <ReactPaginate
+                previousLabel="<"
+                nextLabel=">"
                 pageCount={data?.data.total_pages ?? 0} // total page count
                 forcePage={page - 1} // current page
                 onPageChange={handlePageChange}
@@ -52,27 +52,30 @@ const Movies = () => {
                 breakLabel="..."
                 breakClassName="page-item"
                 breakLinkClassName="page-link"
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
+                marginPagesDisplayed={1}
+                pageRangeDisplayed={2}
                 containerClassName="pagination"
                 activeClassName="active"
             />
             <Container style={{ width: '100%', height: '100%', backgroundColor: 'black' }}>
                 <Row>
                     <Col lg={4} xs={12}>
+                        <div style={{ color: 'white', textAlign: 'center', padding: '10px' }}>
+                            <h1>Filter</h1>
+                        </div>
                     </Col>
                     <Col lg={8} xs={12}>
-                        <Row>
+                        <Row style={{ margin: '0px auto' }}>
                             {data?.data.results.map((movie, index) => (
-                                <Col key={index} lg={4} xs={12}>
+                                <Col key={index} lg={4} xs={6} style={{ margin: '0px auto' }}>
                                     <MovieCard movie={movie} />
                                 </Col>
                             ))}
                         </Row>
                     </Col>
                 </Row>
-            </Container>
-        </div>
+            </Container >
+        </div >
     )
 }
 

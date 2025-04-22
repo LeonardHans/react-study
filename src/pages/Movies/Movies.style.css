@@ -5,4 +5,5 @@
     align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
+    border: '10px solid red';
 }
