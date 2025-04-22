@@ -15,7 +15,7 @@
     transition: all 1s;
     color: white;
     font-weight: bold;
-    overflow-wrap: break-word;
+    overflow: hidden;
 }
 
 .overlay:hover {

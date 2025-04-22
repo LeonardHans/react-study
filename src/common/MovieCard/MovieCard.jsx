@@ -11,13 +11,13 @@ const MovieCard = ({ movie, isTvShow }) => {
     const { getGenres } = globalStore();
 
     if (!movie) {
-        return <ClipLoader color='gray' loading={!movie} size={200} />;
+        return <ClipLoader color='gray' loading={!movie} size={200} style={{ backgroundColor: 'black' }} />;
     }
 
     const urlPrefix = 'https://media.themoviedb.org/t/p/w600_and_h900_bestv2';
 
     return (
-        <div className='card' style={{ backgroundImage: `url(${urlPrefix}${movie.poster_path})` }}>
+        <div className='card' style={{ backgroundColor: 'black', backgroundImage: `url(${urlPrefix}${movie.poster_path})` }}>
             <div className='overlay'>
                 <h1 style={{ textAlign: 'center' }}>{movie.title ?? movie.name}</h1>
                 {
@@ -36,7 +36,7 @@ const MovieCard = ({ movie, isTvShow }) => {
                     {(movie.popularity).toFixed(0)}
                 </div>
                 <div>{movie.adult}</div>
-                <p style={{ color: '#999999', textAlign: 'center', overflow: 'hidden' }}>{movie.overview}</p>
+                <p style={{ color: '#999999', textAlign: 'center' }}>{movie.overview}</p>
             </div>
         </div>
     )

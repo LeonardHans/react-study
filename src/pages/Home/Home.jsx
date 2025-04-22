@@ -34,7 +34,7 @@ const Home = () => {
     }
 
     return (
-        <div className='main'>
+        <div className='home-main'>
             <Banner />
             <MovieSlide useApi={useLeospickQuery} title="Leo's Pick" />
             <MovieSlide useApi={usePopularMoviesQuery} title='Popular Movies' />

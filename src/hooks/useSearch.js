@@ -5,23 +5,24 @@ const url = '/discover/movie' +
         '?include_adult=false' +
         '&include_video=false' +
         '&language=en-US' +
-        '&page=1' +
         '&release_date.gte=2010-01-01' +
         '&sort_by=popularity.desc' +
         '&vote_average.gte=8' +
         '&vote_count.gte=100';
 
-const fetchSearch = (queryData) => {
-    return api.get(url);
+const fetchSearch = ({ keyword, page }) => {
+    return keyword ? 
+    api.get(`/search/movie?query=${keyword}&page=${page}`) 
+    : api.get(url + `&page=${page}`);
 }
 
-export const useSearchQuery = (keyword) => {
+export const useSearchQuery = ({ keyword, page }) => {
     return useQuery({
-        queryKey: ['leospick', keyword],
-        queryFn: fetchLeospick,
+        queryKey: ['movie-search', { keyword, page }],
+        queryFn: () => fetchSearch({ keyword, page }),
         retry: 3,
         retryDelay: (count) => {
-            console.log('fetchLeospick, retry', count);
+            console.log('fetchSearch, retry', count);
             Math.min(1000 * 2 ** count, 30000)
         },
         staleTime: 1000 * 60, // It is NOT requested for a minute.

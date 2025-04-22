@@ -6,8 +6,8 @@
     background-position: center;
     transition: all 1s ease-in-out;
     align-items: center;
-    height: 50%;
     position: relative;
+    height: 30vh;
     overflow: hidden;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .banner-text-area {
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -31,6 +31,13 @@
 
 .banner-text-area>* {
     z-index: 2;
+}
+
+@media (max-width: 800px) {
+    .banner-text-area {
+        width: 100%;
+        padding: 1rem;
+    }
 }
 
 .fade-out {

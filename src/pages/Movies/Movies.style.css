@@ -1,4 +1,8 @@
-.main {
+.movies-main {
     background-color: black;
-    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
