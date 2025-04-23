@@ -17,42 +17,24 @@ const AppLayout = () => {
         navigate(`/movies?q=${keyword}`);
         setKeyword('');
     }
+    const expand = 'sm';
 
     return (
         <div>
-            <Navbar bg="black" expand="lg" style={{ height: isSmallScreen ? '14vh' : '7vh' }}>
-                <Container fluid style={{ position: 'fixed', display: 'flex', justifyContent: 'space-between', height: isSmallScreen ? '14vh' : '7vh', width: '100%', backgroundColor: 'black', zIndex: 10, overflow: 'hidden' }}>
-
-                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Navbar.Brand href="/">
-                            <img src={`${process.env.PUBLIC_URL}/leoflix.png`} alt="Logo" style={{ maxHeight: '7vh', objectFit: 'contain' }} />
-                        </Navbar.Brand>
-                        <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
-                        <Nav.Link href="/movies" style={{ color: 'white' }}>Movies</Nav.Link>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', width: isSmallScreen ? '100%' : 'auto' }}>
-                        <Form className="d-flex" onSubmit={searchByKeyword}>
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                                value={keyword}
-                                onChange={(e) => setKeyword(e.target.value)}
-                            />
-                            <Button variant="danger" onClick={searchByKeyword}>Search</Button>
-                        </Form>
-                    </div>
-
-                    {/*
-                    <Navbar.Collapse id="navbarScroll" >
+            <Navbar expand='sm' className="bg-body-tertiary" bg="black">
+                <Container fluid>
+                    <Navbar.Brand href="/" style={{ width: '20%', height: '7vh' }}>
+                        <img src={`${process.env.PUBLIC_URL}/leoflix.png`} alt="Logo" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain' }} />
+                    </Navbar.Brand>
+                    <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
+                    <Nav.Link href="/movies" style={{ color: 'white' }}>Movies</Nav.Link>
+                    <Navbar.Toggle aria-controls="navbarScroll" style={{ backgroundColor: '#cc0000' }} />
+                    <Navbar.Collapse id="navbarScroll">
                         <Nav
                             className="me-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100%', }}
+                            style={{ maxHeight: '100%' }}
                             navbarScroll
                         >
-                            <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>
-                            <Nav.Link href="/movies" style={{ color: 'white' }}>Movies</Nav.Link>
                         </Nav>
                         <Form className="d-flex" onSubmit={searchByKeyword}>
                             <Form.Control
@@ -65,7 +47,7 @@ const AppLayout = () => {
                             />
                             <Button variant="danger" onClick={searchByKeyword}>Search</Button>
                         </Form>
-                    </Navbar.Collapse>*/}
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
             <Outlet />
