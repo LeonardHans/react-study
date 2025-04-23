@@ -23,7 +23,7 @@ const AppLayout = () => {
         <div>
             <Navbar expand='sm' className="bg-body-tertiary" bg="black">
                 <Container fluid>
-                    <Navbar.Brand href="/" style={{ width: '20%', height: '7vh' }}>
+                    <Navbar.Brand href="/" style={{ height: '7vh' }}>
                         <img src={`${process.env.PUBLIC_URL}/leoflix.png`} alt="Logo" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain' }} />
                     </Navbar.Brand>
                     <Nav.Link href="/" style={{ color: 'white' }}>Home</Nav.Link>

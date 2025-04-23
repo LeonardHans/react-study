@@ -1,6 +1,8 @@
 .card {
     background-size: cover;
     background-position: center;
+    background-color: black;
+    background-repeat: no-repeat;
     width: 220px;
     height: 330px;
     cursor: pointer;
