@@ -7,3 +7,51 @@
     overflow-x: hidden;
     border: '10px solid red';
 }
+
+/* Gray and black themed pagination styles */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.page-item {
+    margin: 0 5px;
+    z-index: 1;
+}
+
+.page-link {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #333;
+    /* Dark gray background */
+    border: 1px solid #222;
+    /* Black border */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+    z-index: 1;
+    background-color: #444;
+    /* Lighter gray for hover effect */
+}
+
+.page-link {
+    background-color: #555;
+    /* Slightly lighter gray */
+    color: #ffffff;
+    /* White text for active item */
+    border-color: #444;
+}
+
+.active {
+    z-index: 2;
+    background-color: #555;
+    /* Slightly lighter gray */
+    color: #ffffff;
+    /* White text for active item */
+    border-color: #444;
+}

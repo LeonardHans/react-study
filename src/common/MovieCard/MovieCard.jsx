@@ -24,24 +24,28 @@ const MovieCard = ({ movie, isTvShow }) => {
     return (
         <div className='card' onClick={() => handleClick()} style={{ backgroundImage: `url(${urlPrefix}${movie.poster_path})` }} >
             <div className='overlay'>
-                <h1 style={{ textAlign: 'center' }}>{movie.title ?? movie.name}</h1>
-                {
-                    movie.genre_ids.map((id, index) => {
-                        return (
-                            <Badge bg="danger" key={index} style={{ color: 'white', textAlign: 'center', margin: '3px' }}>
-                                {getGenres(id, isTvShow) ?? console.log(id)}
-                            </Badge>
-                        )
-                    })
-                }
                 <div>
-                    <FontAwesomeIcon icon={faStar} style={{ color: 'yellow', marginRight: '5px', marginLeft: '5px' }} />
-                    {(movie.vote_average).toFixed(1)}
-                    <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'green', marginRight: '5px', marginLeft: '10px' }} />
-                    {(movie.popularity).toFixed(0)}
+                    <h1 style={{ textAlign: 'center' }}>{movie.title ?? movie.name}</h1>
                 </div>
-                <div>{movie.adult}</div>
-                <p style={{ color: '#999999', textAlign: 'center' }}>{movie.overview}</p>
+                <div>
+                    <div>
+                        <FontAwesomeIcon icon={faStar} style={{ color: 'yellow', marginRight: '5px', marginLeft: '5px' }} />
+                        {(movie.vote_average).toFixed(1)}
+                        <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'green', marginRight: '5px', marginLeft: '10px' }} />
+                        {(movie.popularity).toFixed(0)}
+                    </div>
+
+                    {
+                        movie.genre_ids.map((id, index) => {
+                            return (
+                                <Badge bg="danger" key={index} style={{ color: 'white', textAlign: 'center', margin: '3px' }}>
+                                    {getGenres(id, isTvShow) ?? console.log(id)}
+                                </Badge>
+                            )
+                        })
+                    }
+                    <div>{movie.adult}</div>
+                </div>
             </div>
         </div>
     )

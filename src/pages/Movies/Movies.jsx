@@ -53,7 +53,7 @@ const Movies = () => {
                 breakClassName="page-item"
                 breakLinkClassName="page-link"
                 marginPagesDisplayed={1}
-                pageRangeDisplayed={2}
+                pageRangeDisplayed={1}
                 containerClassName="pagination"
                 activeClassName="active"
             />
