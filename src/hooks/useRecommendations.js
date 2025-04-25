@@ -1,25 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
-const fetchDetail = async ({ id, isTvShow }) => {
+const fetchRecommendations = ( { id, isTvShow }) => {
     const keyword = isTvShow ? 'tv' : 'movie';
-    const [detail, reviews, videos] = await Promise.all([
-        api.get(`/${keyword}/` + id),
-        api.get(`/${keyword}/` + id + '/reviews')
-    ]);
-    return { detail: detail?.data, reviews: reviews?.data};
+    return api.get(`/${keyword}/${id}/recommendations`);
 }
 
-export const useDetailQuery = ({ id, isTvShow }) => {
+export const useRecommendationsQuery = ({ id, isTvShow }) => {
     return useQuery({
-        queryKey: ['detail', { id, isTvShow }],
-        queryFn: () => fetchDetail({ id, isTvShow }),
-        select: (data) => {
-            return { detail: data?.detail, reviews: data?.reviews }; 
-        },
+        queryKey: ['recommendations', { id, isTvShow }],
+        queryFn: () => fetchRecommendations({ id, isTvShow }),
         retry: 3,
         retryDelay: (count) => {
-            console.log('fetchDetail, retry', count);
+            console.log('fetchRecommendations, retry', count);
             Math.min(1000 * 2 ** count, 30000)
         },
         staleTime: 1000 * 60, // It is NOT requested for a minute.

@@ -1,0 +1,25 @@
+.poster-box {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.play-button {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.poster-box:hover .play-button {
+    opacity: 1;
+    cursor: pointer;
+}

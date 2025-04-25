@@ -30,15 +30,15 @@ const Home = () => {
     }, [MovieGenres]);
 
     if (!AreLoadedGenres()) {
-        return <ClipLoader color='red' loading={!AreLoadedGenres()} size={500} style={{ backgroundColor: 'black' }} />;
+        return <ClipLoader color='red' loading={AreLoadedGenres()} size={500} style={{ backgroundColor: 'black' }} />;
     }
 
     return (
         <div className='home-main'>
             <Banner />
-            <MovieSlide useApi={useLeospickQuery} title="Leo's Pick" />
-            <MovieSlide useApi={usePopularMoviesQuery} title='Popular Movies' />
-            <MovieSlide useApi={usePopularTvShowsQuery} title='Popular TV Shows' />
+            <MovieSlide useApi={useLeospickQuery} title="Leo's Pick" isTvShow={false} />
+            <MovieSlide useApi={usePopularMoviesQuery} title='Popular Movies' isTvShow={false} />
+            <MovieSlide useApi={usePopularTvShowsQuery} title='Popular TV Shows' isTvShow={true} />
         </div>
     )
 }

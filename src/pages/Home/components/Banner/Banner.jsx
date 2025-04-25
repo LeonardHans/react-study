@@ -32,7 +32,7 @@ const Banner = () => {
     }, [index, data]);
 
     if (isLoading) {
-        return <ClipLoader color='gray' loading={isLoading} size={200} />;
+        return <ClipLoader color='gray' loading={!isLoading} size={200} />;
     }
     if (isError) {
         return <Alert variant='danger'>Error: {error.message}</Alert>;

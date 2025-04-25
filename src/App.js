@@ -37,7 +37,7 @@ function App() {
   }, [MovieGenres]);
 
   if (!AreLoadedGenres()) {
-      return <ClipLoader color='red' loading={!AreLoadedGenres()} size={500} style={{ backgroundColor: 'black' }} />;
+      return <ClipLoader color='red' loading={AreLoadedGenres()} size={500} style={{ backgroundColor: 'black' }} />;
   }
   
   return (

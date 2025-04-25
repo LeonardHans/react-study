@@ -7,13 +7,13 @@ import { globalStore } from '../../store/globalStore';
 import MovieCard from '../MovieCard/MovieCard';
 import './MovieSlide.style.css';
 
-const MovieSlide = ({ useApi, title }) => {
-    const { data, isLoading, isError, error } = useApi();
+const MovieSlide = ({ useApi, title, id, isTvShow }) => {
+    const { data, isLoading, isError, error } = useApi({ id, isTvShow });
     const { getResponsive } = globalStore();
     const responsive = getResponsive();
 
     if (isLoading) {
-        return <ClipLoader color='gray' loading={isLoading} size={200} />;
+        return <ClipLoader color='gray' loading={!isLoading} size={200} />;
     }
     if (isError) {
         return <Alert variant='danger'>Error: {error.message}</Alert>;
@@ -44,7 +44,7 @@ const MovieSlide = ({ useApi, title }) => {
             */
             >
                 {data?.data.results.map((movie, index) => {
-                    return <MovieCard key={index} movie={movie} isTvShow={title === 'Popular TV Shows'}></MovieCard>
+                    return <MovieCard key={index} movie={movie} isTvShow={isTvShow}></MovieCard>
                 })}
             </Carousel>
         </div>

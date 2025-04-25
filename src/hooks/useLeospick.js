@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
 const url = '/discover/movie' +
-        '?include_adult=false' +
+        '?include_adult=true' +
         '&include_video=false' +
         '&language=en-US' +
         '&page=1' +

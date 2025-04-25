@@ -14,7 +14,6 @@ const Movies = () => {
     const keyword = query.get('q');
 
     const { data, isLoading, isError, error } = useSearchQuery({ keyword, page });
-    console.log('data', data);
 
     useEffect(() => {
         setPage(1);
@@ -25,7 +24,7 @@ const Movies = () => {
     }
 
     if (isLoading) {
-        return <ClipLoader color='gray' loading={isLoading} size={200} style={{ backgroundColor: 'black' }} />;
+        return <ClipLoader color='gray' loading={!isLoading} size={200} style={{ backgroundColor: 'black' }} />;
     }
     if (isError) {
         return <Alert variant='danger'>Error: {error.message}</Alert>;
