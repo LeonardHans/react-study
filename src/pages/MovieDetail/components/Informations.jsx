@@ -44,7 +44,6 @@ const Informations = ({ detail, isTvShow }) => {
                 <p></p>
                 <p style={{ color: '#999999', textAlign: 'left' }}>{detail.overview}</p>
                 <p style={{ color: 'white', textAlign: 'left' }}>Release Date: {detail.release_date ?? detail.first_air_date}</p>
-
                 {detail.budget &&
                     (
                         <p style={{ color: 'white', textAlign: 'left' }}>Budget:

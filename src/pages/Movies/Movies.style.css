@@ -5,7 +5,8 @@
     align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
-    border: '10px solid red';
+    min-height: 91vh;
+
 }
 
 /* Gray and black themed pagination styles */
@@ -54,4 +55,14 @@
     color: #ffffff;
     /* White text for active item */
     border-color: #444;
+}
+
+.filter-box {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    justify-content: 'column';
+    align-items: 'center';
+    display: 'flex';
+    z-index: 2;
 }

@@ -10,16 +10,22 @@ const url = '/discover/movie' +
         '&vote_average.gte=8' +
         '&vote_count.gte=100';
 
-const fetchSearch = ({ keyword, page }) => {
-    return keyword ? 
-    api.get(`/search/movie?query=${keyword}&page=${page}`) 
-    : api.get(url + `&page=${page}`);
+const fetchSearch = ({ keyword, page, filter }) => {
+    if (!filter) {
+        return keyword ? 
+        api.get(`/search/movie?query=${keyword}&page=${page}`) 
+        : api.get(url + `&page=${page}`);
+    }
+    else {
+        console.log('filter', filter);
+        return api.get(`/discover/movie?page=${page}${filter}`);
+    }
 }
 
-export const useSearchQuery = ({ keyword, page }) => {
+export const useSearchQuery = ({ keyword, page, filter }) => {
     return useQuery({
-        queryKey: ['movie-search', { keyword, page }],
-        queryFn: () => fetchSearch({ keyword, page }),
+        queryKey: ['movie-search', { keyword, page, filter }],
+        queryFn: () => fetchSearch({ keyword, page, filter }),
         retry: 3,
         retryDelay: (count) => {
             console.log('fetchSearch, retry', count);
