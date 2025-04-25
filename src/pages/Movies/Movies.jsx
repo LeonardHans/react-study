@@ -13,10 +13,10 @@ import './Movies.style.css';
 
 const Movies = () => {
     const { movieGenres } = globalStore();
-    const [query, setQuery] = useSearchParams();
+    const [query] = useSearchParams();
     const [page, setPage] = useState(1);
     //const [filter, setFilter] = useState(null);
-    const [filteredMovies, setFilteredMovies] = useState([]);
+    const [filteredMovies, setFilteredMovies] = useState(null);
 
     const keyword = query.get('q');
 
@@ -32,46 +32,46 @@ const Movies = () => {
     }
 
     const clearFilter = () => {
-        setFilteredMovies(movies.slice());
+        console.log('clearFilter', filteredMovies, movies);
+        setFilteredMovies(movies?.slice());
     }
 
     const updateFilter = ({ type, key }) => {
-        let filtered = [];
+        let filtered = movies.slice();
         switch (type) {
-            case 'genre': {
+            case 'genre':
                 key = Number(key);
-                filtered = movies.filter(movie => movie.genre_ids.includes(key));
-            } break;
-            case 'popularity': {
+                filtered = filtered.filter(movie => movie.genre_ids.includes(key));
+                break;
+            case 'popularity':
                 if (key === 'asc') {
-                    filtered = movies.sort((a, b) => a.popularity - b.popularity);
+                    filtered.sort((a, b) => a.popularity - b.popularity);
                 }
                 else {
-                    filtered = movies.sort((a, b) => b.popularity - a.popularity);
+                    filtered.sort((a, b) => b.popularity - a.popularity);
                 }
-            } break;
-            case 'voteAverage': {
+                break;
+            case 'voteAverage':
                 if (key === 'asc') {
-                    filtered = movies.sort((a, b) => a.vote_average - b.vote_average);
+                    filtered.sort((a, b) => a.vote_average - b.vote_average);
                 }
                 else {
-                    filtered = movies.sort((a, b) => b.vote_average - a.vote_average);
+                    filtered.sort((a, b) => b.vote_average - a.vote_average);
                 }
-            } break;
+                break;
+            default:
+                console.warn('something went wrong');
+                break;
         }
 
-        console.log('filtered', filtered);
+        console.log('filtered', filtered, movies);
 
-        setFilteredMovies(filtered.slice());
+        setFilteredMovies([].concat(filtered));
     }
 
     useEffect(() => {
-        setFilteredMovies(movies.slice());
+        setFilteredMovies(movies?.slice());
     }, [data]);
-
-    useEffect(() => {
-        console.log('update', filteredMovies);
-    }, [filteredMovies]);
 
     if (isLoading || !filteredMovies) {
         return <ClipLoader color='red' loading={!isLoading && filteredMovies} size={200} style={{ backgroundColor: 'black', height: '50vh' }} />;

@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 import './App.css';
 import { useMovieGenreQuery } from './hooks/useMovieGenre';
@@ -12,11 +12,6 @@ import NotFound from './pages/NotFound/NotFound';
 import { globalStore } from './store/globalStore';
 
 function App() {
-  const [authentiation, setAuthentication] = useState(false);
-  const LoginRoute = ({ page : Page }) => {
-    return authentiation ? <Page /> : <Navigate to='/login' />;
-  }
-
   const { data: tvShowGenres } = useMovieGenreQuery(true);
   const { data: MovieGenres } = useMovieGenreQuery(false);
 

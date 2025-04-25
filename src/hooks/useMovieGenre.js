@@ -11,7 +11,7 @@ export const useMovieGenreQuery = (isTvShow) => {
         queryFn: fetchMovieGenre,
         select: (data) => {
             let genreTable = {};
-            data?.data.genres.map((item) => {
+            data?.data.genres.forEach(item => {
                 genreTable[item.id] = item.name;
             });
             return genreTable;
@@ -19,7 +19,7 @@ export const useMovieGenreQuery = (isTvShow) => {
         retry: 3,
         retryDelay: (count) => {
             console.log('fetchMovieGenre, retry', count);
-            Math.min(1000 * 2 ** count, 30000)
+            return Math.min(1000 * 2 ** count, 30000);
         },
         staleTime: 1000 * 60, // It is NOT requested for a minute.
         gcTime: 1000 * 60 * 5, // Cache is removed after 5 minutes.

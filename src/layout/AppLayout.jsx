@@ -4,20 +4,17 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useMediaQuery } from 'react-responsive';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 const AppLayout = () => {
     const [keyword, setKeyword] = React.useState('');
     const navigate = useNavigate();
-    const isSmallScreen = useMediaQuery({ query: '(max-width: 690px)' });
 
     const searchByKeyword = (e) => {
         e.preventDefault();
         navigate(`/movies?q=${keyword}`);
         setKeyword('');
     }
-    const expand = 'sm';
 
     return (
         <div>
